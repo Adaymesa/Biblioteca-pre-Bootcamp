@@ -7,6 +7,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by adaymesa on 13/01/2017.
@@ -25,7 +26,13 @@ import static org.junit.Assert.assertEquals;
         @Test
         public void greetings() {
             biblioteca.greetings();
-            assertEquals("Welcome to Biblioteca!!\n", outContent.toString());
+            assertEquals("Welcome to Biblioteca!!", outContent.toString());
         }
 
+        @Test
+        public void bookList() {
+            biblioteca.bookList();
+            assertTrue(outContent.toString().contains("The books that are available are:"));
+            assertTrue(outContent.toString().contains(biblioteca.getBooks()));
+        }
 }

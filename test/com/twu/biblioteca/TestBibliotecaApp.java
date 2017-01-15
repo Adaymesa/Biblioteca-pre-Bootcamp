@@ -35,4 +35,12 @@ import static org.junit.Assert.assertTrue;
             assertTrue(outContent.toString().contains("The books that are available are:"));
             assertTrue(outContent.toString().contains(biblioteca.getBooks()));
         }
+        @Test
+        public void menu() {
+            biblioteca.menu();
+            assertEquals("\n\nYou are in the menu, choose one of the following sections:\n", outContent.toString());
+
+        }
+
+
 }

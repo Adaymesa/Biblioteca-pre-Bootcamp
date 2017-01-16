@@ -24,21 +24,24 @@ import static org.junit.Assert.assertTrue;
         }
 
         @Test
-        public void greetings() {
+        public void testGreetings() {
             biblioteca.greetings();
             assertEquals("Welcome to Biblioteca!!", outContent.toString());
         }
 
         @Test
-        public void bookList() {
+        public void testBookList() {
             biblioteca.bookList();
             assertTrue(outContent.toString().contains("The books that are available are:"));
-            assertTrue(outContent.toString().contains(biblioteca.getBooks()));
+            assertTrue(outContent.toString().contains("Think like a programmer"));
+            assertTrue(outContent.toString().contains("V.Anton Spraul"));
+            assertTrue(outContent.toString().contains("2012"));
+
         }
         @Test
-        public void menu() {
+        public void testMenu() {
             biblioteca.menu();
-            assertEquals("\n\nYou are in the menu, choose one of the following sections:\n", outContent.toString());
+            assertTrue(outContent.toString().contains("\n\nYou are in the menu, write a number to choose sections:\n"));
 
         }
 
